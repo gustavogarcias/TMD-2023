@@ -1,0 +1,100 @@
+main {
+  background-color: var(--primary);
+  color: #fff;
+  height: calc(100vh - 98px - 132px);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: var(--container);
+  margin: 0 auto;
+  height: 100%;
+}
+
+.user-icon {
+  margin-bottom: 12px;
+}
+
+.user-icon::before {
+  content: url('https://api.iconify.design/uiw/user.svg?color=%23fff&width=48&height=48');
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-family: 'Oswald', sans-serif;
+}
+
+form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+form > * {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-row > input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+.form-row > label {
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+button {
+  background-color: #fff;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  color: var(--primary);
+  padding: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.register {
+  text-transform: uppercase;
+  font-size: 14px;
+  border: 2px solid #fff;
+  padding: 8px 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  main {
+    height: 100vh;
+  }
+
+  .container {
+    justify-content: flex-start;
+    padding: 48px 12px;
+  }
+
+  form {
+    width: 100%;
+  }
+}

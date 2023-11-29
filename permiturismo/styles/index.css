@@ -1,0 +1,429 @@
+.hero {
+  width: var(--container);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 18px 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Oswald', sans-serif;
+  color: var(--primary);
+  text-align: center;
+}
+
+.hero > h1 {
+  font-size: 48px;
+  margin: 0 auto;
+  animation: title 1.5s linear;
+  line-height: 1.2;
+  padding: 0 84px;
+}
+
+@keyframes title {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.25;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero > img {
+  width: 565px;
+  height: 421px;
+  object-fit: cover;
+  animation: image 2s ease-in;
+}
+
+@keyframes image {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.tourism {
+  background-color: var(--section-bg);
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tourism > h3 {
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.tourism-places {
+  width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.place-link {
+  flex: 1 1 33.33%;
+  width: calc(var(--container / 3));
+  height: 245px;
+  position: relative;
+  overflow: hidden;
+}
+
+.place-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.place-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 24px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.place-content:hover {
+  opacity: 1;
+}
+
+.place-link:hover > .place-image {
+  scale: 1.1;
+}
+
+.place-content > h3 {
+  font-size: 36px;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+}
+
+.place-content > p {
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  line-height: 1.1;
+  letter-spacing: 0.2;
+}
+
+.carousel {
+  background-color: var(--section-bg);
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.carousel > h3 {
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.carousel-container {
+  width: var(--container);
+  margin: 0 auto;
+  height: 373px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  position: relative;
+}
+
+.slide-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 24px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.slide-content:hover {
+  opacity: 1;
+}
+
+.slide-content > h3 {
+  font-size: 36px;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.slide-content > p {
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  line-height: 1.1;
+  letter-spacing: 0.2;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide-content > a {
+  background-color: var(--primary);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: fit-content;
+  padding: 12px 42px;
+}
+
+.next,
+.prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: rgba(63, 63, 63, 0.5);
+  padding: 12px;
+  border-radius: 100%;
+  cursor: pointer;
+  border: none;
+}
+
+.next {
+  right: 1%;
+}
+
+.prev {
+  left: 1%;
+}
+
+.next::after {
+  content: url('https://api.iconify.design/ph/caret-right-bold.svg?color=white&width=24px');
+}
+
+.prev::after {
+  content: url('https://api.iconify.design/ph/caret-left-bold.svg?color=white&width=24px');
+}
+
+.tour {
+  display: flex;
+  width: var(--container);
+  margin: 0 auto;
+  align-items: center;
+  padding: 92px 0;
+}
+
+.tour-find {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tour-find > h2 {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+.tour-find > p {
+  font-size: 18px;
+  color: #111111;
+  text-align: center;
+  padding: 0 96px;
+  line-height: 1.6;
+}
+
+.tour-video {
+  min-width: 557px;
+  height: 337px;
+  background-color: #636363;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: var(--container);
+  margin: 0 auto 24px;
+}
+
+.contact > h2 {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+.contact > form {
+  display: flex;
+  align-self: center;
+  gap: 16px;
+}
+
+.contact > form > input {
+  border: 1px solid #b3b3b3;
+  border-radius: 0px;
+  padding: 12px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  outline: none;
+  width: 240px;
+}
+
+.contact > form > input::placeholder {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+.submit-btn {
+  background-color: var(--primary);
+  border-radius: 0;
+  padding: 0 32px;
+  color: #fff;
+  font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero > h1 {
+    padding: 84px;
+  }
+
+  .tour {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .tour-find {
+    gap: 8px;
+  }
+
+  .tour-find > p {
+    font-size: 18px;
+    color: #111111;
+    text-align: center;
+    padding: 0 24px;
+    line-height: 1.6;
+  }
+
+  .tour-video {
+    min-width: 0;
+    width: 90vw;
+    height: 33vh;
+    background-color: #636363;
+  }
+}
+
+@media (max-width: 768px) {
+  .tourism {
+    background-color: var(--section-bg);
+    padding: 24px 12px;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .tourism-places {
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+  }
+
+  .place-link {
+    flex: unset;
+    width: 90vw;
+    position: relative;
+  }
+
+  .carousel-container {
+    width: 90vw;
+    height: 373px;
+  }
+
+  .contact {
+    padding: 0 12px;
+  }
+
+  .contact > form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact > form > input {
+    width: 100%;
+  }
+
+  .submit-btn {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 0;
+  }
+
+  .hero > h1 {
+    font-size: 40px;
+    margin: 0;
+    padding: 64px 8vw;
+  }
+
+  .hero > img {
+    width: 80vw;
+    height: auto;
+    object-fit: cover;
+    animation: image 2s ease-in;
+    padding-bottom: 64px;
+  }
+}
